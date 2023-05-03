@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 
-import {  scheduler } from "./lib/arbox.js";
+import { scheduler } from "./lib/arbox.js";
 
 const app = express();
 dotenv.config();

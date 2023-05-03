@@ -1,16 +1,7 @@
 import express from "express";
-import mongoose from "mongoose";
 import dotenv from "dotenv";
-import cors from 'cors';
 
-// import { scheduler } from "./lib/scheduler.js";
-import { loginArbox, createEnrollmentJobs, envokeJobs, scheduler } from "./lib/arbox.js";
-
-import productsRoutes from "./routes/products-routes.js";
-import ordersRoutes from "./routes/orders-routes.js";
-import shippingsRoutes from "./routes/shippings-routes.js";
-import usersRoutes from "./routes/users-routes.js";
-import HttpError from "./models/http-error.js";
+import {  scheduler } from "./lib/arbox.js";
 
 const app = express();
 dotenv.config();
@@ -37,26 +28,6 @@ app.use((error, req, res, next) => {
 	res.json({ message: error.message || "An unknown error occured!" });
 });
 
-// default error if route not handled
-app.use((error, req, res, next) => {
-	throw new HttpError("Could not find this route.", 404);
-});
-
 
 // listen to requests
 		app.listen(process.env.PORT || 5000);
-
-// connect to mongodb
-// mongoose
-// 	.connect(
-// 		`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.93gb7.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
-// 	)
-// 	.then(() => {
-// 		console.log("connected to db!");
-
-// 		// listen to requests
-// 		app.listen(process.env.PORT || 5000);
-// 	})
-// 	.catch((err) => {
-// 		console.log("connection failed: ", err);
-// 	});

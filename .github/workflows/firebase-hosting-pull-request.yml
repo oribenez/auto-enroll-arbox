@@ -15,5 +15,3 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_AUTO_ENROLL_ARBOX }}'
           projectId: auto-enroll-arbox
-      - run: npm start & npx wait-on http://127.0.0.1:3000
-

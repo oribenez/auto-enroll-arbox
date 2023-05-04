@@ -1,14 +1,9 @@
 {
 	"classes": [
-		{
-			"class_name": "WOD",
-			"date": "2023-05-03",
-			"start_time": "18:30"
-		},
     {
 			"class_name": "WOD",
-			"date": "2023-05-04",
-			"start_time": "18:30"
+			"date": "2023-05-05",
+			"start_time": "08:30"
 		}
 	]
 }

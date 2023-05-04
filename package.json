@@ -24,6 +24,7 @@
 		"node-cron": "^3.0.2"
 	},
 	"devDependencies": {
+		"firebase-tools": "^11.30.0",
 		"nodemon": "^2.0.13"
 	}
 }

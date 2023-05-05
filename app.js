@@ -2,12 +2,12 @@ import express from "express";
 import dotenv from "dotenv";
 import functions from "firebase-functions";
 
-import firebaseVarsExport from './lib/firebase-env-variables.js';
-import { scheduler } from "./lib/arbox.js";
+import { firebaseVarsPorting} from './lib/firebase-env-variables.js';
+import { loginArbox, scheduler } from "./lib/arbox.js";
 
 const app = express();
 dotenv.config();
-firebaseVarsExport();
+firebaseVarsPorting();
 
 app.use(express.json());
 
@@ -21,6 +21,9 @@ app.use((req, res, next) => {
 	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
 	next();
 });
+
+console.log("TEST Login: ")
+await loginArbox(); //test
 await scheduler();
 
 app.use((error, req, res, next) => {

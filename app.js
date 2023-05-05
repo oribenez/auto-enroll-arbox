@@ -27,11 +27,11 @@ app.use((req, res, next) => {
 	next();
 });
 
-await loginArbox(); //test
 await scheduler();
 
-app.get("/", (req, res, next) => {
+app.get("/", async (req, res, next) => {
 	console.log("Health check");
+	await loginArbox(); //test
 	
 	const healthcheck = {
 		uptime: process.uptime(),

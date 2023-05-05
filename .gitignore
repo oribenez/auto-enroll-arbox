@@ -3,3 +3,4 @@
 .DS_Store
 .env
 firebase-debug.log
+/data/schedule.js

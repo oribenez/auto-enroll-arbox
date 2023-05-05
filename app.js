@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import functions from "firebase-functions";
 
 import { scheduler } from "./lib/arbox.js";
 
@@ -30,4 +31,6 @@ app.use((error, req, res, next) => {
 
 
 // listen to requests
-app.listen(process.env.PORT || 5000);
+// app.listen(process.env.PORT || 5000);
+
+export const api = functions.https.onRequest(app);

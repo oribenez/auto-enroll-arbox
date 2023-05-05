@@ -1,5 +1,0 @@
-app = "aged-sky-1418"
-
-[build]
-  builder = "paketobuildpacks/builder:base"
-  buildpacks = ["gcr.io/paketo-buildpacks/nodejs"]

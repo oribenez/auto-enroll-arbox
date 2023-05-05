@@ -30,8 +30,7 @@ app.use((req, res, next) => {
 await scheduler();
 
 app.get("/", async (req, res, next) => {
-	console.log("Health check");
-	await loginArbox(); //test
+	console.log("Health check 🩸🧬");
 	
 	const healthcheck = {
 		uptime: process.uptime(),

@@ -2,10 +2,12 @@ import express from "express";
 import dotenv from "dotenv";
 import functions from "firebase-functions";
 
+import firebaseVarsExport from './lib/firebase-env-variables.js';
 import { scheduler } from "./lib/arbox.js";
 
 const app = express();
 dotenv.config();
+firebaseVarsExport();
 
 app.use(express.json());
 

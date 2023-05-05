@@ -2,3 +2,4 @@
 /nodemon.json
 .DS_Store
 .env
+firebase-debug.log

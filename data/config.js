@@ -3,7 +3,7 @@ export default {
     email: process.env.ARBOX_USER_EMAIL,
     password: process.env.ARBOX_USER_PASSWORD
   },
-  registerTime: "17:36:00",
+  registerTime: "21:00:00",
   timezone: "Asia/Jerusalem",
   coach_priorities: [
     "עמית גורן",

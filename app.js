@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import functions from "firebase-functions";
 
-import { firebaseVarsPorting} from './lib/firebase-env-variables.js';
+import { firebaseVarsPorting } from "./lib/firebase-env-variables.js";
 import { loginArbox, scheduler } from "./lib/arbox.js";
 
 const app = express();
@@ -13,18 +13,38 @@ app.use(express.json());
 
 // Setting CORS Headers to every response of the server
 app.use((req, res, next) => {
-	res.setHeader('Access-Control-Allow-Origin', process.env.FRONTEND_URL.toString()); // * => this is the domain
+	res.setHeader(
+		"Access-Control-Allow-Origin","*"
+	); // * => this is the domain
 	res.setHeader(
 		"Access-Control-Allow-Headers",
 		"Origin, X-Requested-With, Content-Type, Accept, Authorization"
 	);
-	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
+	res.setHeader(
+		"Access-Control-Allow-Methods",
+		"GET, POST, PATCH, DELETE, OPTIONS"
+	);
 	next();
 });
 
-console.log("TEST Login: ")
 await loginArbox(); //test
 await scheduler();
+
+app.get("/", (req, res, next) => {
+	console.log("Health check");
+	
+	const healthcheck = {
+		uptime: process.uptime(),
+		message: "OK",
+		timestamp: Date.now(),
+	};
+	try {
+		res.status(200).send(healthcheck);
+	} catch (error) {
+		healthcheck.message = error;
+		res.status(503).send();
+	}
+});
 
 app.use((error, req, res, next) => {
 	if (res.headerSent) {
@@ -34,8 +54,7 @@ app.use((error, req, res, next) => {
 	res.json({ message: error.message || "An unknown error occured!" });
 });
 
-
 // listen to requests
-// app.listen(process.env.PORT || 5000);
+app.listen(5000);
 
 export const api = functions.https.onRequest(app);

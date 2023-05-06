@@ -38,6 +38,7 @@ app.get("/", async (req, res, next) => {
 		timestamp: Date.now(),
 	};
 	try {
+		console.log(healthcheck);
 		res.status(200).send(healthcheck);
 	} catch (error) {
 		healthcheck.message = error;

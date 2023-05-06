@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 export default {
   user_creds: {
     email: process.env.ARBOX_USER_EMAIL,

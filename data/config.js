@@ -6,7 +6,7 @@ export default {
     email: process.env.ARBOX_USER_EMAIL,
     password: process.env.ARBOX_USER_PASSWORD
   },
-  registerTime: "11:58:00", //need to also change time in pubsub job excuter to wake up server
+  registerTime: "21:00:00", //need to also change time in pubsub job excuter to wake up server
   timezone: "Asia/Jerusalem",
   coach_priorities: [
     "עמית גורן",

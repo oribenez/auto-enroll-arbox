@@ -7,7 +7,7 @@ export default {
     password: process.env.ARBOX_USER_PASSWORD
   },
   alertzyAccountKey: process.env.ALERTZY_ACCOUNT_KEY,
-  registerTime: "17:55:10", // Exact time of registration (!important)
+  registerTime: "21:00:00", // Exact time of registration (!important)
   timezone: "Asia/Jerusalem",
   // Your preffered coaches by priority on ascending order. 
   // Make sure the names appear axactly like in the Arbox app, (no need to mention all of them, only those you like)

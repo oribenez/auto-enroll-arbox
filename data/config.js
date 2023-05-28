@@ -6,9 +6,13 @@ export default {
     email: process.env.ARBOX_USER_EMAIL,
     password: process.env.ARBOX_USER_PASSWORD
   },
-  registerTime: "21:00:00", //need to also change time in pubsub job excuter to wake up server
+  alertzyAccountKey: process.env.ALERTZY_ACCOUNT_KEY,
+  registerTime: "17:55:10", // Exact time of registration (!important)
   timezone: "Asia/Jerusalem",
-  coach_priorities: [
+  // Your preffered coaches by priority on ascending order. 
+  // Make sure the names appear axactly like in the Arbox app, (no need to mention all of them, only those you like)
+  coach_priorities: 
+  [ 
     "עמית גורן",
     "רועי אופנהיימר",
     "עומרי פלד",

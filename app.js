@@ -1,13 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
-import functions from "firebase-functions";
 
-import { firebaseVarsPorting } from "./lib/firebase-env-variables.js";
-import { loginArbox, scheduler } from "./lib/arbox.js";
+import { scheduler } from "./lib/arbox.js";
 
 const app = express();
 dotenv.config();
-firebaseVarsPorting();
 
 app.use(express.json());
 
@@ -27,7 +24,8 @@ app.use((req, res, next) => {
 	next();
 });
 
-await scheduler();
+// Initiate Arbox scheduler
+await scheduler(); 
 
 app.get("/", async (req, res, next) => {
 	console.log("Health check 🩸🧬");
@@ -56,5 +54,3 @@ app.use((error, req, res, next) => {
 
 // listen to requests
 app.listen(5000);
-
-export const api = functions.https.onRequest(app);

@@ -8,7 +8,6 @@ export default {
   },
   alertzyAccountKey: process.env.ALERTZY_ACCOUNT_KEY,
   registerTime: "21:00:00", // Exact time of registration (!important)
-  timezone: "Asia/Jerusalem",
   remindersTime: "10:00:00",
   maxClassesPerMonth: 17,
   // Your preffered coaches by priority on ascending order. 
@@ -22,5 +21,6 @@ export default {
     "עומר לנדאו",
     "מתן קדים",
     "אורפז איבגי",
-  ]
+  ],
+  timezone: "Asia/Jerusalem",
 };

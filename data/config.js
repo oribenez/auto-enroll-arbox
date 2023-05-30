@@ -9,6 +9,8 @@ export default {
   alertzyAccountKey: process.env.ALERTZY_ACCOUNT_KEY,
   registerTime: "21:00:00", // Exact time of registration (!important)
   timezone: "Asia/Jerusalem",
+  remindersTime: "10:00:00",
+  maxClassesPerMonth: 17,
   // Your preffered coaches by priority on ascending order. 
   // Make sure the names appear axactly like in the Arbox app, (no need to mention all of them, only those you like)
   coach_priorities: 
